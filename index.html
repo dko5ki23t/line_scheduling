@@ -1,0 +1,102 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日程調整</title>
+  <style type="text/css">
+  body {
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      font-size: 14px;
+      line-height: 1.6em;
+      margin: 0px;
+      padding: 0;
+  }
+  #container{
+  padding: 20px;
+  }
+  table{
+      border: #dddddd solid 1px;
+      border-collapse: collapse;
+      line-height:1em;
+  float: left;
+  margin: 5px;
+  }
+  table th{
+      border: #dddddd solid 1px;
+      background-color: #162F6B;
+      padding: 5px;
+      color: #FFFFFF;
+  font-size: 0.9em;
+  }
+  table td{
+      border: #dddddd solid 1px;
+      padding:10px;
+  text-align: right;
+  cursor: pointer;
+  }
+  table td:hover{
+  background-color: #FFF09E;
+  }
+  /**************************
+  * ボタン用
+  **************************/
+  .calendar_button a{
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: normal;
+      display: inline-block;
+      background-color: #878787;
+      padding: 5px;
+      border-radius: 3px;
+  }
+  .calendar_button a:hover{
+      background-color: #9E9E9E;
+  }
+
+	#nowLoading {
+		display: table;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+		opacity: 0.8;
+	}
+	
+	#innerMsg {
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		padding-top: 140px;
+		z-index:100;
+		background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkV3VJDcgTnK-rKgvq0BiQV7Q52-ouX0kOufIrOmRhfc1raaiEG0zOjakHQPdlx6eYxUslw_9JkzodzJHmlsIVEu5UGk-44naRPYNzWuV89nrv-EIMuHzCtrJf6rABJ_dRjIMiOML2OgluTOhg9hhC2LPnfy5kG9lK7lBBRlCkPh2KAZinyYMhzPlr/s1600/1-1-loading.gif") center center no-repeat;
+	}
+	@keyframes s3 {to{transform: rotate(1turn)}}
+  </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="line_scheduling_core/check_calendar.js"></script>
+  <script type="text/javascript">
+  $(function(){
+      $('.mycalendar').checkcalendar();
+  });
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    参加可能な日付を選択して送信ボタンを押してください。
+		<form id="form1" name="form1">
+      <input type="hidden" id="days" name="days" >
+      <div class="mycalendar" style="overflow:hidden;"></div>
+      
+      <br />
+      <input type="button" id="btn" value="送信" style="padding: 5px; font-size: 1em;">
+    </form>
+
+		<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+		<script src="line_scheduling_core/post.js"></script>
+  </div>
+
+</body>
+</html>
