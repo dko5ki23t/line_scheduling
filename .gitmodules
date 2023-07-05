@@ -1,0 +1,3 @@
+[submodule "line_scheduling_core"]
+	path = line_scheduling_core
+	url = git@github.com:dko5ki23t/line_scheduling_core.git
