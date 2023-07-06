@@ -45,7 +45,7 @@ $(function () {
     dispLoading("処理中...");
 
     //idToken = liff.getIDToken();
-    //lineToken = idToken;
+    lineToken = liff.getIDToken();
     idToken = liff.getDecodedIDToken();
     lineName = idToken.name;
     const data = {
@@ -53,7 +53,7 @@ $(function () {
       name: lineName,
       days: $('input[name="days"]').val(),
     };
-    //alert(lineToken);
+    alert(lineToken);
     const data_json = JSON.stringify(data);
     $.post(POST_URL, data_json)
     .done(function(data){
