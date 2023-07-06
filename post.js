@@ -44,8 +44,9 @@ $(function () {
   $('#btn').on('click', function () {
     dispLoading("処理中...");
 
-    idToken = liff.getIDToken();
+    //idToken = liff.getIDToken();
     //lineToken = idToken;
+    idToken = getDecodedIDToken();
     lineName = idToken.name;
     const data = {
       //token: lineToken,
