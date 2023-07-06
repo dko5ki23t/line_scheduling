@@ -53,6 +53,7 @@ $(function () {
       name: lineName,
       days: $('input[name="days"]').val(),
     };
+    alert(lineName);
     //alert(lineToken);
     const data_json = JSON.stringify(data);
     $.post(POST_URL, data_json)
