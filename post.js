@@ -46,14 +46,13 @@ $(function () {
 
     //idToken = liff.getIDToken();
     //lineToken = idToken;
-    idToken = getDecodedIDToken();
+    idToken = liff.getDecodedIDToken();
     lineName = idToken.name;
     const data = {
       //token: lineToken,
       name: lineName,
       days: $('input[name="days"]').val(),
     };
-    alert(lineName);
     //alert(lineToken);
     const data_json = JSON.stringify(data);
     $.post(POST_URL, data_json)
